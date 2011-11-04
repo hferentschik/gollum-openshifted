@@ -3,3 +3,7 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+
+export
+perl -pi -0777 -e "s/<user>/$OPENSHIFT_APP_UUID/g" $OPENSHIFT_REPO_DIR/config.ru
+perl -pi -0777 -e "s/<app>/$OPENSHIFT_APP_NAME/g" $OPENSHIFT_REPO_DIR/config.ru
