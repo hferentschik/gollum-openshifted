@@ -7,6 +7,6 @@ use Rack::Auth::Basic, "Welcome wiki  - authenticate!" do |name, password|
   [name, password] == ['wiki', 'wiki']
 end
 
-Precious::App.set(:gollum_path, '/var/lib/libra/<user>/git/<app>.git')
+Precious::App.set(:gollum_path, '<bare-repo>')
 Precious::App.set(:wiki_options, {})
 run Precious::App

@@ -17,6 +17,11 @@ for an OpenShift account and follow these instructions:
 * \<password\>    - Your OpenShift password
 * \<git-url\>     - The OpenShift git URL which you receive when creating the app	
 
+See also
+
+* http://www.highlevelbits.com/2011/11/gollum-wiki-reloaded.html
+* http://www.highlevelbits.com/2011/11/my-precious-wiki.html
+
 Let me know if you have problems ...
 
 Enjoy,

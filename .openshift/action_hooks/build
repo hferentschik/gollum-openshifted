@@ -4,6 +4,13 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
+# dump the enviroment settings
 export
-perl -pi -0777 -e "s/<user>/$OPENSHIFT_APP_UUID/g" $OPENSHIFT_REPO_DIR/config.ru
-perl -pi -0777 -e "s/<app>/$OPENSHIFT_APP_NAME/g" $OPENSHIFT_REPO_DIR/config.ru
+
+# set a variable pointing to the bare repo
+# we cannot work against the checkout, since it is a archive without .git
+$OPENSHIFT_BARE_REPO=/var/lib/libra/$OPENSHIFT_APP_UUID/git/$OPENSHIFT_APP_NAME.git
+
+# Gollum needs the git repo in its configuration. Using Perl and in place regular
+# expression replacement we get the right value into config.ru. 
+perl -pi -0777 -e "s/<bare-repo>/$OPENSHIFT_BARE_REPO/g" $OPENSHIFT_REPO_DIR/config.ru
