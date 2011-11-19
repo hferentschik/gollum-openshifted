@@ -18,7 +18,7 @@ for an OpenShift account and follow these instructions:
 * \<git-url\>     - The OpenShift git URL which you receive when creating the app	
 
 The commits will be made by John Doe. Make sure to edit the action hook '[build](https://github.com/hferentschik/gollum-openshifted/blob/master/.openshift/action_hooks/build)'
-to change this.
+to change this. The default login is wiki/wiki. This can be changed in [config.ru](https://github.com/hferentschik/gollum-openshifted/blob/master/config.ru).
 
 See also
 
