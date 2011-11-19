@@ -15,3 +15,9 @@ declare -x BARE_REPO="$HOME/git/$OPENSHIFT_APP_NAME.git"
 # expression replacement we get the right value into config.ru. 
 perl -pi -0777 -e "s@<repo>@$BARE_REPO@g" $OPENSHIFT_REPO_DIR/config.ru
 
+cd $BARE_REPO
+# to set the Git user we need to manually edit the config file. Using 'git config user.name "John Doe" does not work
+echo "[user]" >> config
+echo "        name = John Doe" >> config
+echo "        email = john.doe@mailinator.com" >> config
+
